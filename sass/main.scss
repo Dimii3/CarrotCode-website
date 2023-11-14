@@ -526,7 +526,7 @@ button {
 	}
 }
 .faq-item.active .faq-item__answer {
-	max-height: 20rem;
+	max-height: 30rem;
 }
 
 .faq-item.active .faq-item__btn i {
@@ -745,6 +745,7 @@ button {
 	}
 	.header {
 		position: relative;
+		padding: 16rem 2rem 8rem 2rem;
 		.logo-mobile {
 			display: block;
 			position: absolute;
@@ -758,7 +759,6 @@ button {
 		.wrapper {
 			height: 100%;
 			flex-direction: column;
-			padding: 16rem 2rem 8rem 2rem;
 		}
 		.header-content {
 			width: 100%;
@@ -808,7 +808,6 @@ button {
 		width: 47%;
 	}
 
-
 	.faq {
 		.faq-body {
 			flex-direction: column;
@@ -839,6 +838,10 @@ button {
 }
 
 @media (max-width: 576px) {
+	.header-content__heading {
+		font-size: 3.5rem;
+		margin-bottom: 2rem;
+	}
 	.section-heading {
 		font-size: 3rem;
 	}
