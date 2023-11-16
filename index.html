@@ -18,15 +18,17 @@
 			rel="stylesheet" />
 		<script src="https://kit.fontawesome.com/1ddfd708d9.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="/css/main.css" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9W0XRETX5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9W0XRETX5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-  gtag('config', 'G-S9W0XRETX5');
-</script>
+			gtag('config', 'G-S9W0XRETX5');
+		</script>
 	</head>
 	<body>
 		<button class="menu-btn" aria-label="Przycisk do obsługi nawigacji witryny">
@@ -45,6 +47,9 @@
 					</li>
 					<li class="nav-links__item">
 						<a href="#faq" aria-label="Sekcja często zadawanych pytań">FAQ</a>
+					</li>
+					<li class="nav-links__item">
+						<a href="#offers" aria-label="Sekcja Cennik">Cennik</a>
 					</li>
 					<li class="nav-links__item">
 						<a href="#contact" aria-label="Sekcja Kontakt i Wycena">Kontakt/Wycena</a>
@@ -303,7 +308,8 @@
 								<a
 									href="https://space-agnecy-seo.netlify.app/"
 									class="btn"
-									aria-label="Zobacz live przykładową strone internetową Agencji Marketingowej" target="_blank"
+									aria-label="Zobacz live przykładową strone internetową Agencji Marketingowej"
+									target="_blank"
 									>Zobacz</a
 								>
 							</div>
@@ -403,6 +409,67 @@
 					</div>
 				</div>
 			</section>
+			<section class="section offers" id="offers">
+				<h2 class="section-heading">Nasza oferta</h2>
+				<p class="section-description">Zobacz, co mamy dla Ciebie w naszej Ofercie!</p>
+				<div class="wrapper">
+					<div class="offers-box">
+						<div class="offer-card offer-card--second">
+							<span class="offer-card__icon">
+								<i class="fa-solid fa-bolt" aria-hidden="true"></i>
+							</span>
+							<h3 class="offer-card__heading offer-card__heading--second">Pozycjonowanie strony www</h3>
+							<p class="offer-card__description">Co wchodzi w skład naszej oferty SEO?</p>
+							<ul class="offer-card-list">
+								<li class="offer-card-list__item offer-card-list__item--second">Przeprowadzenie Audytu pod kątem SEO</li>
+								<li class="offer-card-list__item offer-card-list__item--second">
+									Dokonanie wszelkich możliwych poprawek pod kątem wydajności witryny
+									(On-page SEO)
+								</li>
+								<li class="offer-card-list__item offer-card-list__item--second">
+									Wyszukanie najkorzystniejszych słów kluczowych oraz jednoczesne ich
+									wdrożenie w celu uzyskania lepszej pozycji w organicznych wynikach
+								</li>
+								<li class="offer-card-list__item offer-card-list__item--second">
+									Dołączenie tagu śledzącego aktywność użytkowników na stronie tzw. Google
+									Tag udostępniany przez narzędzie Google Analitycs
+								</li>
+							</ul>
+							<p class="offer-card__price offer-card__price--second"><span>Cena:</span> 300zł (netto)</p>
+						</div>
+						<div class="offer-card">
+							<span class="offer-card__icon">
+								<i class="fa-solid fa-object-group" aria-hidden="true"></i>
+							</span>
+							<h3 class="offer-card__heading">Tworzenie strony www</h3>
+							<p class="offer-card__description">
+								Co wchodzi w skład naszej oferty tworzenia strony www?
+							</p>
+							<ul class="offer-card-list">
+								<li class="offer-card-list__item">Ten pakiet obejmuje wszystkie punkty z oferty SEO</li>
+								<li class="offer-card-list__item">
+									Tworzymy tylko strony wizytówkowe, landing page
+								</li>
+								<li class="offer-card-list__item">
+									Zaprojektowanie przyjaznego i zrozumiałego dla użytkownika Layoutu strony
+								</li>
+								<li class="offer-card-list__item">
+									Zapewnienie RWD - Responsive web design, gwarantujemy dostępność i
+									czytelność strony na każdym urządzeniu
+								</li>
+								<li class="offer-card-list__item">
+									Pomoc przy rejestracji domeny, wyborze hostingu itp.
+								</li>
+								<li class="offer-card-list__item">
+									90 dni opieki nad stroną w razie konieczności wprowadzania zmian na
+									życzenie klienta
+								</li>
+							</ul>
+							<p class="offer-card__price"><span>Cena:</span> 800 - 1 000zł (netto)</p>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section class="section contact" id="contact">
 				<h2 class="section-heading">Zainteresowany współpracą?</h2>
 				<p class="section-description">
@@ -423,9 +490,9 @@
 								<h3 class="contact-socials__heading">Znajdziesz nas również</h3>
 								<div class="social-box">
 									<a
-										href="#"
+										href="https://www.facebook.com/profile.php?id=61553251244583"
 										class="social-box__item"
-										aria-label="Odnośnik do naszego facebooka"
+										aria-label="Odnośnik do naszego facebooka" target="_blank"
 										><i class="fa-brands fa-square-facebook" title="Ikona facebooka"></i
 									></a>
 									<a
@@ -474,6 +541,7 @@
 				</div>
 			</section>
 		</main>
+		<a href="#" aria-label="Przewiń do góry strony" class="scroll-to-top"><i class="fa-solid fa-angle-up" title="Przewin do góry"></i></a>
 		<footer class="footer">
 			<p class="footer__text">&copy; <span class="footer-year"></span> CarrotCoding</p>
 		</footer>

@@ -60,8 +60,32 @@ button {
 	color: $dark-color;
 }
 
-// MENU-BTN
+// SCROLL TOP BTN
+.scroll-to-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	right: 3rem;
+	bottom: 3rem;
+	height: 3rem;
+	width: 3rem;
+	padding: 2rem;
+	font-size: 3rem;
+	color: $white-color;
+	transform: translateY(400%);
+	background-color: $main-color-hover;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	z-index: 50;
+	opacity: 0;
+}
+.scroll-to-top.active {
+	transform: translateY(0);
+	opacity: 1;
+}
 
+// MENU-BTN
 .menu-btn {
 	display: none;
 	position: fixed;
@@ -422,6 +446,7 @@ button {
 			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
 			&__img {
 				object-fit: cover;
+				height: 100%;
 			}
 			.portfolio-content {
 				position: absolute;
@@ -533,8 +558,111 @@ button {
 	transform: rotate(180deg);
 }
 
+// OFFERS
+.offers {
+	background-color: $white-color;
+	.section-heading {
+		margin-bottom: 1rem;
+	}
+	.offers-box {
+		margin-top: 8rem;
+		display: flex;
+		gap: 10rem;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.offer-card {
+			padding: 4rem 3rem;
+			background-color: #fff;
+			display: flex;
+			flex-direction: column;
+			width: 45%;
+			flex: auto;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+
+			&--second {
+				background-color: $dark-color;
+				&__heading {
+					color: $white-color;
+				}
+			}
+			&__icon {
+				display: block;
+				width: 5rem;
+				height: 5rem;
+				padding: 4.5rem;
+				border-radius: 50%;
+				margin: 0 auto 3rem auto;
+				text-align: center;
+				font-size: 4.5rem;
+				color: $white-color;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: $main-color;
+			}
+			&__heading {
+				text-align: center;
+				font-size: 2rem;
+				margin: 2rem 0 0.5rem 0;
+				&--second {
+					color: $white-color;
+				}
+			}
+
+			&__description {
+				text-align: center;
+				font-size: 1.6rem;
+				color: $main-color;
+				font-weight: bold;
+				margin-bottom: 2rem;
+			}
+			.offer-card-list {
+				font-size: 1.6rem;
+				color: $dark-color;
+				padding: 1rem;
+
+				&__item {
+					margin-bottom: 1.5rem;
+					&--second {
+						color: $white-color;
+					}
+					&:not(:last-child) {
+						padding-bottom: 0.5rem;
+						border-bottom: 2px solid $main-color;
+					}
+				}
+			}
+			&__price {
+				margin-top: auto;
+				font-size: 2rem;
+				&--second {
+					color: $white-color;
+				}
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
 // CONTACT
 .contact {
+	position: relative;
+	overflow: hidden;
+	&::after {
+		position: absolute;
+		content: '';
+		background-color: $dark-color;
+		top: -20%;
+		left: 30%;
+		transform: rotate(30deg);
+		width: 50rem;
+		height: 60rem;
+		opacity: 0.1;
+		z-index: -1;
+		border-radius: 30% 60% 40% 10%;
+	}
 	.section-heading {
 		margin-bottom: 1rem;
 	}
@@ -850,6 +978,10 @@ button {
 	}
 	.section-description {
 		font-size: 2rem;
+	}
+
+	.offers .offers-box .offer-card .offer-card-list {
+		padding: 0;
 	}
 
 	.contact .contact-box .contact-ways .contact-list__item {
