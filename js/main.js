@@ -56,3 +56,12 @@ navLinks.forEach((navLink) =>
 		menuOpen = false;
 	})
 );
+
+// PORTFOLIO
+const showProjectBtns = document.querySelectorAll('.project__btn');
+
+showProjectBtns.forEach((item) => {
+	item.addEventListener('click', () => {
+	item.parentElement.classList.toggle('show')
+})
+});

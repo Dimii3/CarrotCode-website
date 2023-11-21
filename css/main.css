@@ -411,61 +411,87 @@ button {
   z-index: -1;
 }
 .portfolio .portfolio-box {
-  display: flex;
-  gap: 4rem;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
 }
-.portfolio .portfolio-box .portfolio-item {
+.portfolio .portfolio-box .project {
   position: relative;
-  width: 30%;
-  max-height: 70rem;
+  height: 50rem;
   overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
-.portfolio .portfolio-box .portfolio-item__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
-}
-.portfolio .portfolio-box .portfolio-item .portfolio-content {
+.portfolio .portfolio-box .project .project-incoming {
   position: absolute;
-  bottom: 10rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  opacity: 0.2;
+}
+.portfolio .portfolio-box .project-text {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  max-height: 25rem;
-  height: 100%;
-  width: 100%;
+  gap: 1rem;
   padding: 2rem;
-  text-align: center;
-  color: #f9f9f9;
-  background-color: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+  -webkit-clip-path: circle(50% at 125% -20%);
+          clip-path: circle(50% at 125% -20%);
+  background-color: transparent;
+  transition: background-color 0.3s ease, -webkit-clip-path 0.3s ease;
+  transition: background-color 0.3s ease, clip-path 0.3s ease;
+  transition: background-color 0.3s ease, clip-path 0.3s ease, -webkit-clip-path 0.3s ease;
 }
-.portfolio .portfolio-box .portfolio-item .portfolio-content__title {
-  font-size: 3rem;
+.portfolio .portfolio-box .project-text__title {
+  color: #f9f9f9;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
 }
-.portfolio .portfolio-box .portfolio-item .portfolio-content__description {
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-.portfolio .portfolio-box .portfolio-item .portfolio-content .btn {
-  display: inline-block;
-  margin-top: 2rem;
-  font-size: 1.6rem;
-  padding: 1rem 3rem;
+.portfolio .portfolio-box .project-text__live {
   color: #f9f9f9;
-  background-color: transparent;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
   border: 2px solid #f9f9f9;
-  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
 }
-.portfolio .portfolio-box .portfolio-item .portfolio-content .btn:hover {
+.portfolio .portfolio-box .project-text__live:hover {
   color: #1d222a;
-  border: 2px solid #f9f9f9;
-  background-color: #f9f9f9;
+  background-color: #ff8439;
+  border: 2px solid #ff8439;
+}
+.portfolio .portfolio-box .project__btn {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  border: none;
+  background: transparent;
+  color: #ff8439;
+  background-color: #fff;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 3rem;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+.portfolio .portfolio-box .project__btn:hover {
+  transform: scale(1.1);
+}
+.portfolio .portfolio-box .project.show .project-text {
+  -webkit-clip-path: circle(200% at 125% -20%);
+          clip-path: circle(200% at 125% -20%);
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 .faq .faq-body {
@@ -748,16 +774,6 @@ button {
   }
 }
 @media (max-width: 1200px) {
-  .portfolio .portfolio-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-  }
-  .portfolio .portfolio-box .portfolio-item {
-    width: 40%;
-  }
   .about .about-box .about-cards .card {
     width: 100%;
   }
@@ -879,8 +895,8 @@ button {
   .seo-box .seo-images {
     width: 65%;
   }
-  .portfolio .portfolio-box .portfolio-item {
-    width: 47%;
+  .portfolio .portfolio-box {
+    grid-template-columns: repeat(2, 1fr);
   }
   .faq .faq-body {
     flex-direction: column;
@@ -894,8 +910,9 @@ button {
   }
 }
 @media (max-width: 767px) {
-  .portfolio .portfolio-box .portfolio-item {
-    width: 100%;
+  .portfolio .portfolio-box {
+    grid-template-columns: 1fr;
+    gap: 10rem;
   }
   .contact .contact-box .contact-socials {
     flex: auto;
@@ -920,6 +937,9 @@ button {
   }
   .offers .offers-box .offer-card .offer-card-list {
     padding: 0;
+  }
+  .nav__logo {
+    top: 10rem;
   }
   .contact .contact-box .contact-ways .contact-list__item {
     flex-direction: column;
