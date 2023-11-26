@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.4;
+  font-family: "Montserrat", sans-serif;
+  background: #f9f9f9;
+}
+
+.header {
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8439;
+}
+.header__heading {
+  font-size: 4rem;
+  padding: 0 2rem;
+}
+@media (max-width: 576px) {
+  .header__heading {
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
+.section {
+  padding: 10rem 2rem;
+}
+.section .rules__heading {
+  font-size: 2.4rem;
+  color: #1d222a;
+  font-weight: 400;
+}
+.section .rules__sub-heading {
+  text-align: center;
+  margin: 4rem 0;
+  font-size: 2rem;
+}
+.section .rules__text {
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+.footer {
+  padding: 2rem;
+  font-size: 1.8rem;
+  background-color: #1d222a;
+  text-align: center;
+  color: #f9f9f9;
+}
+
+.backToMain {
+  position: fixed;
+  bottom: 3rem;
+  right: 4rem;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  color: #f9f9f9;
+  background-color: #1d222a;
+  border: 2px solid #1d222a;
+}
+@media (max-width: 576px) {
+  .backToMain {
+    font-size: 1.4rem;
+  }
+}
+.backToMain i {
+  margin-right: 1rem;
+  transition: margin 0.3s;
+}
+.backToMain:hover i {
+  margin-right: 2rem;
+}/*# sourceMappingURL=cookiePage.css.map */
