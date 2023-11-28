@@ -1,7 +1,11 @@
 $main-color: #ff8439;
 $main-color-hover: #cf7500;
 $dark-color: #1d222a;
+$dark-color-light: #222;
 $white-color: #f9f9f9;
+$pure-white-color: #fff;
+$box-shadow-dark: rgba(0, 0, 0, 0.15);
+$box-shadow-light: rgba(255, 255, 255, 0.15);
 
 *,
 *::before,
@@ -70,7 +74,7 @@ button {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border: none;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 2px 5px $box-shadow-dark;
 	.cookie-btn {
 		margin-top: 2rem;
 		padding: 1rem 3rem;
@@ -102,7 +106,7 @@ button {
 	color: $white-color;
 	transform: translateY(400%);
 	background-color: $main-color-hover;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 2px 5px $box-shadow-dark;
 	transition: transform 0.3s ease, opacity 0.3s ease;
 	z-index: 50;
 	opacity: 0;
@@ -120,7 +124,6 @@ button {
 	right: 2rem;
 	width: 8rem;
 	height: 8rem;
-	// display: flex;
 	justify-content: center;
 	align-items: center;
 	border: none;
@@ -137,7 +140,7 @@ button {
 	height: 0.3rem;
 	border-radius: 5px;
 	background-color: $main-color;
-	box-shadow: 0 2px 5px #44444415;
+	box-shadow: 0 2px 5px $box-shadow-dark;
 	transition: all 0.4s ease-in-out;
 }
 
@@ -149,7 +152,7 @@ button {
 	height: 0.3rem;
 	border-radius: 5px;
 	background-color: $main-color;
-	box-shadow: 0 2px 5px #44444415;
+	box-shadow: 0 2px 5px $box-shadow-dark;
 	transition: all 0.4s ease-in-out;
 }
 
@@ -179,7 +182,7 @@ button {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background-color: #fff;
+	background-color: $pure-white-color;
 	z-index: 100;
 	.wrapper {
 		display: flex;
@@ -196,6 +199,7 @@ button {
 	}
 	.nav-links {
 		display: flex;
+		align-items: center;
 		font-size: 1.7rem;
 
 		&__item {
@@ -228,12 +232,30 @@ button {
 					transform: scaleX(100%);
 				}
 			}
+			.btn-darkMode {
+				font-size: 2.2rem;
+				border: none;
+				width: 3.5rem;
+				height: 3.5rem;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $dark-color;
+				background: transparent;
+				// padding: 1rem;
+				background-color: transparent;
+				.dark {
+					display: none;
+				}
+			}
 		}
 	}
 }
 
 // HEADER
 .header {
+	background-color: $pure-white-color;
 	position: relative;
 	overflow: hidden;
 	.logo-mobile {
@@ -354,9 +376,9 @@ button {
 				min-height: 30rem;
 				padding: 2rem;
 				text-align: center;
-				background-color: #fff;
+				background-color: $white-color;
 				overflow: hidden;
-				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+				box-shadow: 5px 5px 10px $box-shadow-dark;
 				cursor: pointer;
 				&__icon {
 					font-size: 4.5rem;
@@ -405,6 +427,9 @@ button {
 }
 
 // SEO
+.seo {
+	background-color: $pure-white-color;
+}
 .seo-box {
 	display: flex;
 	gap: 10rem;
@@ -468,7 +493,7 @@ button {
 			position: relative;
 			height: 50rem;
 			overflow: hidden;
-			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+			box-shadow: 5px 5px 10px $dark-color;
 			.project-incoming {
 				position: absolute;
 				top: 50%;
@@ -519,7 +544,7 @@ button {
 				border: none;
 				background: transparent;
 				color: $main-color;
-				background-color: #fff;
+				background-color: $white-color;
 				width: 4rem;
 				height: 4rem;
 				display: flex;
@@ -545,6 +570,7 @@ button {
 }
 
 .faq {
+	background-color: $pure-white-color;
 	.faq-body {
 		display: flex;
 		align-items: center;
@@ -576,7 +602,7 @@ button {
 				width: 100%;
 				z-index: 10;
 				cursor: pointer;
-				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+				box-shadow: 5px 5px 10px $box-shadow-dark;
 				transition: background-color 0.3s ease;
 				i {
 					font-size: 3rem;
@@ -621,12 +647,12 @@ button {
 		justify-content: space-between;
 		.offer-card {
 			padding: 4rem 3rem;
-			background-color: #fff;
+			background-color: $white-color;
 			display: flex;
 			flex-direction: column;
 			width: 45%;
 			flex: auto;
-			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+			box-shadow: 0px 0px 20px $box-shadow-dark;
 
 			&--second {
 				background-color: $dark-color;
@@ -699,6 +725,7 @@ button {
 .contact {
 	position: relative;
 	overflow: hidden;
+	background-color: $pure-white-color;
 	&::after {
 		position: absolute;
 		content: '';
@@ -749,7 +776,7 @@ button {
 			width: 55%;
 			padding: 3rem 6rem;
 			background-color: $main-color;
-			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+			box-shadow: 5px 5px 10px $box-shadow-dark;
 			.form-heading {
 				text-align: center;
 				font-size: 3rem;
