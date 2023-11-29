@@ -23,17 +23,18 @@ const inputEmail = document.querySelector('#email');
 const formChecker = (input) => {
 	if (input.value.trim().length < 3) {
 		formBtn.disabled = true;
-		formBtn.style.cursor = 'not-allowed'
+		formBtn.style.cursor = 'not-allowed';
 	} else {
 		formBtn.disabled = false;
-		formBtn.style.cursor = 'pointer'
+		formBtn.style.cursor = 'pointer';
 	}
 };
 
-[inputName, inputEmail].forEach(input => input.addEventListener('keyup', () => {
-	formChecker(input)
-}))
-
+[inputName, inputEmail].forEach((input) =>
+	input.addEventListener('keyup', () => {
+		formChecker(input);
+	})
+);
 
 function isSendForm() {
 	if (document.location.search === '?mail_status=sent') {
@@ -60,12 +61,15 @@ const cookieHandle = () => {
 		cookieModal.showModal();
 	}
 };
-
 cookieBtn.addEventListener('click', () => {
 	localStorage.setItem('cookie', 'accept');
 	cookieHandle();
 });
-cookieHandle();
+
+const showCookie = () => {
+	setTimeout(cookieHandle, 5000)
+}
+showCookie()
 
 // MENU
 let menuOpen = false;
@@ -170,3 +174,17 @@ const checkTheme = () => {
 
 checkTheme();
 themeBtn.addEventListener('click', toggleTheme);
+
+// ANIMATION
+const animateItems = document.querySelectorAll('.animate');
+const animateElements = () => {
+	const triggerBottom = window.innerHeight / 5 * 4;
+	animateItems.forEach((item) => {
+		const itemTop = item.getBoundingClientRect().top;
+		if (itemTop < triggerBottom) {
+			item.classList.add('appear');
+		}
+	});
+};
+
+window.addEventListener('scroll', animateElements)
