@@ -10,7 +10,7 @@
 			name="keywords"
 			content="tworzenie stron internetowych, jak zrobić stronę, strona internetowa, , strona internetowa, strona wizytówkowa, strona internetowa cena" />
 		<title>CarrotCoding | Tworzenie stron internetowych</title>
-		<link rel="icon" type="image/x-icon" href="/img/favIco.png" />
+		<link rel="icon" type="image/x-icon" href="/img/carrotcoding_icon-min.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -19,25 +19,22 @@
 		<script src="https://kit.fontawesome.com/1ddfd708d9.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="/css/main.css" />
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9W0XRETX5"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-
-			gtag('config', 'G-S9W0XRETX5');
-		</script>
+		<script defer src="https://www.googletagmanager.com/gtag/js?id=G-S9W0XRETX5"></script>
+		<script defer src="/js/snippet-ga.js"></script>
 	</head>
 	<body>
+		<div class="preloader">
+			<div class="ring">
+				<span>Loading...</span>
+			</div>
+		</div>
 		<dialog class="cookie-modal">
 			<p class="cookie-text">
 				Serwis wykorzystuje pliki cookies m.in. w celu poprawienia jej dostępności, personalizacji,
 				obsługi kont użytkowników czy aby zbierać dane, dotyczące ruchu na stronie. Każdy może sam
 				decydować o tym czy dopuszcza pliki cookies, ustawiając odpowiednio swoją przeglądarkę.<br /><br />Więcej
 				informacji znajdziesz w
-				<a href="polityka.html" target="_blank">Polityce Prywatności i Regulaminie.</a>
+				<a href="polityka.html" aria-label="Przeniesienie do strony polityka prywatności i regulamin" target="_blank">Polityce Prywatności i Regulaminie.</a>
 			</p>
 			<button class="cookie-btn">Zagdzam się</button>
 		</dialog>
@@ -46,7 +43,7 @@
 		</button>
 		<nav class="nav">
 			<div class="wrapper">
-				<a href="#" class="nav__logo" aria-label="Logo firmy CarrotCoding"> CarrotCoding </a>
+				<a href="#" class="nav__logo" aria-label="Logo firmy CarrotCoding"> <img src="/img/carrotcoding_header_logo(2)-min.png" alt="Logo firmy CarrotCoding" class="logo"> </a>
 				<ul class="nav-links">
 					<li class="nav-links__item"><a href="#about" aria-label="Sekcja o nas">O nas</a></li>
 					<li class="nav-links__item">
@@ -61,18 +58,20 @@
 					<li class="nav-links__item">
 						<a href="#offers" aria-label="Sekcja Cennik">Cennik</a>
 					</li>
-					<li class="nav-links__item">
+					<li class="nav-links__item nav-links__item--contact">
 						<a href="#contact" aria-label="Sekcja Kontakt i Wycena">Kontakt</a>
 					</li>
 					<li class="nav-links__item theme">
-						<button class="btn-darkMode" aria-label="Zmień na ciemny motyw strony"><i class="fa-solid fa-toggle-off light" aria-hidden="true"></i>
-							<i class="fa-solid fa-toggle-on  dark" aria-hidden="true"></i></button>
+						<button class="btn-darkMode" aria-label="Zmień na ciemny motyw strony">
+							<i class="fa-solid fa-toggle-off light" aria-hidden="true"></i>
+							<i class="fa-solid fa-toggle-on dark" aria-hidden="true"></i>
+						</button>
 					</li>
 				</ul>
 			</div>
 		</nav>
 		<header class="header">
-			<a href="#" class="logo-mobile" aria-label="Logo firmy CarrotCoding"> CarrotCoding </a>
+			<a href="#" class="logo-mobile" aria-label="Logo"> <img src="/img/carrotcoding_header_logo(2)-min.png" alt="Logo firmy CarrotCoding" class="logo"> </a>
 			<div class="wrapper">
 				<div class="header-content">
 					<h1 class="header-content__heading">Tworzenie stron internetowych (www)</h1>
@@ -80,11 +79,8 @@
 						Czy warto posiadać stronę internetową?
 					</p>
 					<p class="header-content__description header-content__description--answer">
-						Odpowiedź brzmi: Oczywiście, że tak! To doskonałe miejsce na kreowanie wizerunku
-						marki. Działa jak cyfrowa wizytówka, do której użytkownik w każdej chwili może
-						sięgnąć. Za pomocą odpowiednich treści, grafik i komunikatów pozwala na kształtowanie
-						narracji o Twojej firmie, dzięki czemu masz wpływ na to, jak widzą Cię potencjalni
-						klienci.
+						Oczywiście! To świetne do kreowania wizerunku firmy. Jest jak wirtualna wizytówka,
+						zawsze dostępna.
 					</p>
 				</div>
 				<div class="header-image">
@@ -109,7 +105,8 @@
 								<div class="strategy-item animate">
 									<p class="strategy-item__title"><span>01</span>Analiza i Konsultacje</p>
 									<p class="strategy-item__text">
-										Rozpoczynamy proces współpracy od konsultacji z klientem. Ustalamy wstępne oczekiwania, termin realizacji oraz wycenę.
+										Rozpoczynamy proces współpracy od konsultacji z klientem. Ustalamy
+										wstępne oczekiwania, termin realizacji oraz wycenę.
 									</p>
 								</div>
 								<div class="strategy-item animate">
@@ -117,8 +114,9 @@
 									<p class="strategy-item__text">
 										Na podstawie zebranych informacji tworzymy strategię projektową.
 										Określamy kluczowe pojęcia, kluczowy kolor firmowy,
-										elementy/zdjecia/styl kojarzone z firmą. <span>Działamy w ścisłej współpracy
-											z klientem</span>, aby zapewnić, że nasza usługa spełni oczekiwania.
+										elementy/zdjecia/styl kojarzone z firmą.
+										<span>Działamy w ścisłej współpracy z klientem</span>, aby zapewnić,
+										że nasza usługa spełni oczekiwania.
 									</p>
 								</div>
 								<div class="strategy-item animate">
@@ -133,17 +131,15 @@
 									</p>
 								</div>
 								<div class="strategy-item animate">
-									<p class="strategy-item__title">
-										<span>04</span>Kodowanie
-									</p>
+									<p class="strategy-item__title"><span>04</span>Kodowanie</p>
 									<p class="strategy-item__text">
-										 Każdorazowo rozpoczynamy od podstaw, <span>tworząc nasz produkt indywidualnie od ZERA</span>, z uwzględnieniem unikalnych potrzeb i oczekiwań klienta.
+										Każdorazowo rozpoczynamy od podstaw,
+										<span>tworząc nasz produkt indywidualnie od ZERA</span>, z
+										uwzględnieniem unikalnych potrzeb i oczekiwań klienta.
 									</p>
 								</div>
 								<div class="strategy-item animate">
-									<p class="strategy-item__title">
-										<span>05</span>Testowanie
-									</p>
+									<p class="strategy-item__title"><span>05</span>Testowanie</p>
 									<p class="strategy-item__text">
 										Przeprowadzamy kompleksowe testy manualne, aby zapewnić wysoką jakość
 										produktu. Korygujemy wszelkie błędy i optymalizujemy wydajność,
@@ -222,13 +218,17 @@
 							<p class="section-description">Pomożemy Ci uzyskać zauważanlość w sieci</p>
 							<ul class="seo-list">
 								<li class="seo-list__item">
-									Tworzymy witryny zgodnie z obowiązującymi standardami oraz praktykami z zakresu optymalizacji pod wyszukiwarki internetowe, co obejmuje proces analizy i oceny strony pod kątem SEO
+									Tworzymy witryny zgodnie z obowiązującymi standardami oraz praktykami z
+									zakresu optymalizacji pod wyszukiwarki internetowe, co obejmuje proces
+									analizy i oceny strony pod kątem SEO
 								</li>
 								<li class="seo-list__item">
-									Rzetelnie dobieramy słowa kluczowe do treści strony, po uzyskaniu akceptacji klienta
+									Rzetelnie dobieramy słowa kluczowe do treści strony, po uzyskaniu
+									akceptacji klienta
 								</li>
 								<li class="seo-list__item">
-									Świadczymy także usługi związane z reklamą na platformach takich jak Facebook, Instagram i Google Ads
+									Świadczymy także usługi związane z reklamą na platformach takich jak
+									Facebook, Instagram i Google Ads
 								</li>
 							</ul>
 						</div>
@@ -406,16 +406,19 @@
 							<p class="offer-card__description">Co wchodzi w skład naszej oferty SEO?</p>
 							<ul class="offer-card-list">
 								<li class="offer-card-list__item offer-card-list__item--second">
-									Badanie i wybór odpowiednich słów kluczowych związanych z branżą i treścią strony
+									Badanie i wybór odpowiednich słów kluczowych związanych z branżą i treścią
+									strony
 								</li>
 								<li class="offer-card-list__item offer-card-list__item--second">
 									Analiza i optymalizacja plików graficznych pod kątem rozmiaru i formatu
 								</li>
 								<li class="offer-card-list__item offer-card-list__item--second">
-									Optymalizacja tytułów stron, opisów meta oraz nagłówków pod kątem słów kluczowych
+									Optymalizacja tytułów stron, opisów meta oraz nagłówków pod kątem słów
+									kluczowych
 								</li>
 								<li class="offer-card-list__item offer-card-list__item--second">
-									Poprawa szybkości ładowania strony poprzez optymalizację kodu, obrazów i zasobów
+									Poprawa szybkości ładowania strony poprzez optymalizację kodu, obrazów i
+									zasobów
 								</li>
 								<li class="offer-card-list__item offer-card-list__item--second">
 									Dołączenie tagu śledzącego aktywność użytkowników na stronie tzw. Google
@@ -439,22 +442,27 @@
 									Wszystkie elementy oferty SEO są zawarte w tym pakiecie
 								</li>
 								<li class="offer-card-list__item">
-									Stworzenie strony wizytówkowej od ZERA typu One-page - formularz (opcjonalnie)
+									Stworzenie strony wizytówkowej od ZERA typu One-page - formularz
+									(opcjonalnie)
 								</li>
 								<li class="offer-card-list__item">
-									Stworzenie układu strony, który jest przyjazny i łatwy do zrozumienia dla użytkowników
+									Stworzenie układu strony, który jest przyjazny i łatwy do zrozumienia dla
+									użytkowników
 								</li>
 								<li class="offer-card-list__item">
-									Zapewniamy, że strona będzie czytelna i dostępna na dowolnym urządzeniu (responsywny design - RWD)
+									Zapewniamy, że strona będzie czytelna i dostępna na dowolnym urządzeniu
+									(responsywny design - RWD)
 								</li>
 								<li class="offer-card-list__item">
-									Wsparcie w procesie rejestracji domeny oraz wyborze hostingu i innych kwestii związanych z infrastrukturą internetową
+									Wsparcie w procesie rejestracji domeny oraz wyborze hostingu i innych
+									kwestii związanych z infrastrukturą internetową
 								</li>
 								<li class="offer-card-list__item">
-									Nadzór nad stroną przez 90 dni, dostępny do dokonywania żądanych zmian na życzenie klienta
+									Nadzór nad stroną przez 90 dni, dostępny do dokonywania żądanych zmian na
+									życzenie klienta
 								</li>
 							</ul>
-							<p class="offer-card__price"><span>Cena:</span> 800 - 1 000zł (netto)</p>
+							<p class="offer-card__price"><span>Cena:</span> 500 - 800zł (netto)</p>
 						</div>
 					</div>
 				</div>
@@ -510,7 +518,7 @@
 										type="text"
 										name="name"
 										id="name"
-										placeholder="Tomasz"
+										placeholder="Podaj swoje imię"
 										required
 										minlength="3" />
 								</div>
@@ -520,16 +528,19 @@
 										type="email"
 										name="email"
 										id="email"
-										placeholder="Tomasz@mail.com"
+										placeholder="Wprowadź swój adres e-mail"
 										required />
 								</div>
 								<div class="form-box">
 									<label for="msg">Wiadomość</label>
-									<textarea id="msg" name="msg" placeholder="Przykład wiadomości: Firma, wybór oferty, oczekiwania w skrócie (ilość sekcji, treści, zdjęć, grafik)."></textarea>
+									<textarea
+										id="msg"
+										name="msg"
+										placeholder="Przykład wiadomości: Firma, wybór oferty (ilość sekcji, treści, zdjęć, grafik)."></textarea>
 								</div>
 								<p class="form-footer">
-									Klikając przycisk "Wyślij zapytanie" wyrażasz zgodę na przetwarzenie Twoich danych w
-									postaci Imienia oraz Adresu kontaktowego (email).
+									Klikając przycisk "Wyślij zapytanie" wyrażasz zgodę na przetwarzenie
+									Twoich danych w postaci Imienia oraz Adresu kontaktowego (email).
 									<a href="polityka.html" target="_blank">Polityka prywatności</a>
 								</p>
 								<button class="form-btn">Wyślij zapytanie</button>

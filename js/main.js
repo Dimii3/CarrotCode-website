@@ -67,9 +67,9 @@ cookieBtn.addEventListener('click', () => {
 });
 
 const showCookie = () => {
-	setTimeout(cookieHandle, 5000)
-}
-showCookie()
+	setTimeout(cookieHandle, 5000);
+};
+showCookie();
 
 // MENU
 let menuOpen = false;
@@ -133,24 +133,10 @@ const themeBtn = document.querySelector('.btn-darkMode');
 const moonIco = document.querySelector('.dark');
 const sunIco = document.querySelector('.light');
 const root = document.documentElement;
-let isDark = false;
+let isDark = true;
 
 const toggleTheme = () => {
-	if (!isDark) {
-		// DARK STYLE
-		root.style.setProperty('--white-color', '#1a1a1c');
-		root.style.setProperty('--pure-white-color', '#222');
-		root.style.setProperty('--box-shadow-dark', 'rgba(255, 255, 255, 0.15)');
-
-		root.style.setProperty('--dark-color', '#f9f9f9');
-		root.style.setProperty('--dark-color-light', '#fff');
-		root.style.setProperty('--box-shadow-light', 'rgba(16, 4, 4, 0.15)');
-		isDark = true;
-		moonIco.style.display = 'block';
-		sunIco.style.display = 'none';
-		// CREATING SAVE IN LS
-		localStorage.setItem('theme', 'dark');
-	} else if (isDark) {
+	if (isDark) {
 		// LIGHTSTYLE
 		root.style.setProperty('--white-color', '#f9f9f9');
 		root.style.setProperty('--pure-white-color', '#fff');
@@ -164,11 +150,25 @@ const toggleTheme = () => {
 		sunIco.style.display = 'block';
 		// CREATING SAVE IN LS
 		localStorage.setItem('theme', 'light');
+	} else if (!isDark) {
+		// DARK STYLE
+		root.style.setProperty('--white-color', '#1a1a1c');
+		root.style.setProperty('--pure-white-color', '#222');
+		root.style.setProperty('--box-shadow-dark', 'rgba(255, 255, 255, 0.15)');
+
+		root.style.setProperty('--dark-color', '#f9f9f9');
+		root.style.setProperty('--dark-color-light', '#fff');
+		root.style.setProperty('--box-shadow-light', 'rgba(16, 4, 4, 0.15)');
+		isDark = true;
+		moonIco.style.display = 'block';
+		sunIco.style.display = 'none';
+		// CREATING SAVE IN LS
+		localStorage.setItem('theme', 'dark');
 	}
 };
 
 const checkTheme = () => {
-	localStorage.getItem('theme') === 'dark' ? (isDark = false) : (isDark = true);
+	localStorage.getItem('theme') === 'light' ? (isDark = true) : (isDark = false);
 	toggleTheme();
 };
 
@@ -178,7 +178,7 @@ themeBtn.addEventListener('click', toggleTheme);
 // ANIMATION
 const animateItems = document.querySelectorAll('.animate');
 const animateElements = () => {
-	const triggerBottom = window.innerHeight / 5 * 4;
+	const triggerBottom = (window.innerHeight / 5) * 4;
 	animateItems.forEach((item) => {
 		const itemTop = item.getBoundingClientRect().top;
 		if (itemTop < triggerBottom) {
@@ -187,4 +187,41 @@ const animateElements = () => {
 	});
 };
 
-window.addEventListener('scroll', animateElements)
+window.addEventListener('scroll', animateElements);
+
+// PRELOADER
+document.body.style.overflow = 'hidden';
+window.addEventListener('load', () => {
+	const preloader = document.querySelector('.preloader');
+	preloader.classList.add('loader-hidden');
+	document.body.style.overflow = 'visible';
+	preloader.addEventListener('transitionend', () => {
+		preloader.remove();
+	});
+});
+
+// SCROLLSPY
+const removeAllActive = () => {
+	document.querySelectorAll('.nav-links__item a').forEach((link) => link.classList.remove('active'));
+};
+const scrollSpy = () => {
+	const sections = document.querySelectorAll('.section').forEach((section) => {
+		const sectionTop = section.getBoundingClientRect().top * 1.5;
+		const triggerBottom = window.innerHeight;
+		if (triggerBottom > sectionTop) {
+			const navLinksSpy = document.querySelectorAll('.nav-links__item a').forEach((link) => {
+				const linkID = (linkKey = link.getAttribute('href').slice(1, link.length));
+				if (section.id === linkID) {
+					removeAllActive();
+					link.classList.add('active');
+				}
+			});
+		} else if (window.scrollY === 0) {
+			removeAllActive();
+		}
+	});
+};
+
+window.addEventListener('scroll', scrollSpy);
+// const sections = document.querySelectorAll('.section').forEach(section => console.log(section.id))
+// const navLinksSpy = document.querySelectorAll('.nav-links__item a').forEach(link => console.log(link.getAttribute('href').slice(1,link.length)))
