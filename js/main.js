@@ -20,21 +20,38 @@ const inputName = document.querySelector('#name');
 const inputEmail = document.querySelector('#email');
 
 // FORM CHECKER
-const formChecker = (input) => {
-	if (input.value.trim().length < 3) {
-		formBtn.disabled = true;
-		formBtn.style.cursor = 'not-allowed';
-	} else {
-		formBtn.disabled = false;
-		formBtn.style.cursor = 'pointer';
-	}
+// const formChecker = (input) => {
+// 	if (input.value.trim().length < 3) {
+// 		formBtn.disabled = true;
+// 		formBtn.style.cursor = 'not-allowed';
+// 	} else {
+// 		formBtn.disabled = false;
+// 		formBtn.style.cursor = 'pointer';
+// 	}
+// };
+
+// [inputName, inputEmail].forEach((input) =>
+// 	input.addEventListener('keyup', () => {
+// 		formChecker(input);
+// 	})
+// );
+
+const formChecker = () => {
+	[inputEmail, inputName].forEach((input) => {
+		if (input.value.trim().length === 0) {
+			input.parentElement.classList.add('error');
+			input.nextElementSibling.textContent = `Pole nie może być puste!`;
+		} else if (input.value.trim().length <= 3) {
+			input.parentElement.classList.add('error');
+			input.nextElementSibling.textContent = `Pole musi składać sie z co najmniej 3 znaków!`;
+		} else {
+			input.parentElement.classList.remove('error');
+			input.nextElementSibling.textContent = ``;
+		}
+	});
 };
 
-[inputName, inputEmail].forEach((input) =>
-	input.addEventListener('keyup', () => {
-		formChecker(input);
-	})
-);
+formBtn.addEventListener('click', formChecker)
 
 function isSendForm() {
 	if (document.location.search === '?mail_status=sent') {
@@ -103,9 +120,11 @@ faqBtns.forEach((faqBtn) => {
 });
 
 window.addEventListener('scroll', () => {
-	if (window.scrollY > 300) {
+	if (window.scrollY > 200) {
+		menu.classList.add('expand');
 		scrollTopBtn.classList.add('active');
 	} else {
+		menu.classList.remove('expand');
 		scrollTopBtn.classList.remove('active');
 	}
 });
@@ -223,5 +242,3 @@ const scrollSpy = () => {
 };
 
 window.addEventListener('scroll', scrollSpy);
-// const sections = document.querySelectorAll('.section').forEach(section => console.log(section.id))
-// const navLinksSpy = document.querySelectorAll('.nav-links__item a').forEach(link => console.log(link.getAttribute('href').slice(1,link.length)))
