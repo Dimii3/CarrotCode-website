@@ -67,6 +67,10 @@ button {
 	color: var(--dark-color);
 }
 
+.mb-4 {
+	margin-bottom: 4rem;
+}
+
 .preloader {
 	position: fixed;
 	top: 0;
@@ -408,7 +412,7 @@ button {
 	transform: rotate(40deg);
 	background-color: var(--white-color);
 	/* border: 2px dashed var(--dark-color); */
-	box-shadow: 1px 1px 5px rgba(16, 4, 4, 0.10);
+	box-shadow: 1px 1px 5px rgba(16, 4, 4, 0.1);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	z-index: -1;
@@ -638,12 +642,21 @@ button {
 
 .portfolio .section-heading {
 	color: var(--dark-color);
+	margin-bottom: 0;
 }
 
 .portfolio .portfolio-box {
 	display: grid;
 	gap: 3rem;
 	grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio .portfolio-box:not(:last-child) {
+	margin-bottom: 8rem;
+}
+
+.portfolio .wrapper {
+	margin-top: 8rem;
 }
 .portfolio .portfolio-box .project {
 	position: relative;
@@ -1181,7 +1194,7 @@ button {
 		transform: translateX(100%);
 		background-color: var(--pure-white-color);
 		border-bottom: none;
-		transition: transform 0.6s 0.3s;
+		transition: transform 0.6s 0.6s;
 	}
 	.nav .wrapper {
 		position: relative;
@@ -1422,7 +1435,7 @@ button {
 
 @keyframes dropDown {
 	0% {
-		transform: translateY(-100%);
+		transform: translateY(100%);
 		opacity: 0;
 	}
 	100% {

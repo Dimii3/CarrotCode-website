@@ -19,23 +19,6 @@ const msgStatus = document.querySelector('.msg-status');
 const inputName = document.querySelector('#name');
 const inputEmail = document.querySelector('#email');
 
-// FORM CHECKER
-// const formChecker = (input) => {
-// 	if (input.value.trim().length < 3) {
-// 		formBtn.disabled = true;
-// 		formBtn.style.cursor = 'not-allowed';
-// 	} else {
-// 		formBtn.disabled = false;
-// 		formBtn.style.cursor = 'pointer';
-// 	}
-// };
-
-// [inputName, inputEmail].forEach((input) =>
-// 	input.addEventListener('keyup', () => {
-// 		formChecker(input);
-// 	})
-// );
-
 const formChecker = () => {
 	[inputEmail, inputName].forEach((input) => {
 		if (input.value.trim().length === 0) {
