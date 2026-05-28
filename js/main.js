@@ -4,6 +4,11 @@ const navBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.nav');
 const navLinks = document.querySelectorAll('.nav-links__item a');
 
+// Null checks for critical elements
+if (!navBtn || !menu || !scrollTopBtn) {
+	console.warn('Some DOM elements not found');
+}
+
 // FOOTER YEAR
 const currYear = new Date().getFullYear();
 const footerYear = (document.querySelector('.footer-year').textContent = currYear);
@@ -170,7 +175,7 @@ const toggleTheme = () => {
 };
 
 const checkTheme = () => {
-	localStorage.getItem('theme') === 'light' ? (isDark = true) : (isDark = false);
+	localStorage.getItem('theme') === 'light' ? (isDark = false) : (isDark = true);
 	toggleTheme();
 };
 
@@ -212,7 +217,7 @@ const scrollSpy = () => {
 		const triggerBottom = window.innerHeight;
 		if (triggerBottom > sectionTop) {
 			const navLinksSpy = document.querySelectorAll('.nav-links__item a').forEach((link) => {
-				const linkID = (linkKey = link.getAttribute('href').slice(1, link.length));
+				const linkID = link.getAttribute('href').slice(1);
 				if (section.id === linkID) {
 					removeAllActive();
 					link.classList.add('active');
